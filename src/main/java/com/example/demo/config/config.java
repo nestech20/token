@@ -41,8 +41,8 @@ public class config {
 	             .anyRequest().authenticated()             // rest need auth
 	         )
 	         .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class) // add JWT filter
-	         .userDetailsService(employeeService)
-	         .httpBasic(Customizer.withDefaults());
+	         .userDetailsService(employeeService);
+	       
 
 	     return http.build();
 	 }

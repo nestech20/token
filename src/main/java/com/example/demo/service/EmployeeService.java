@@ -57,7 +57,7 @@ public class EmployeeService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(
                 employee.getUsername(),
                 employee.getPassword(),
-                Collections.singleton(new SimpleGrantedAuthority("ROLE_USER"))
+                Collections.singleton(new SimpleGrantedAuthority(employee.getUsername()))
         );
     }
 }

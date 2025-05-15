@@ -56,7 +56,9 @@ public class HeyController {
 
             return ResponseEntity.ok(new LoginResponse(token));
         } catch (Exception e) {
+            e.printStackTrace(); // <-- Add this line
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
+
     }
 }
